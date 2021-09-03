@@ -1,0 +1,46 @@
+.container-fluid{
+	background:#0000a0;
+	
+	
+	
+}
+
+.casa-img{
+	float:left;
+}
+
+.navbar-brand{
+	padding: 30px;
+	font-weight: bold;
+	font-size: 40px;
+	color: white;
+	
+	
+}
+
+.panel-default{
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+.alert{
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+.ca-titulo-panel{
+	float:left;
+	text-decoration: blue;
+	font-weight: bold;
+	padding-top:7px;
+	
+}
+
+
+.ca-link-panel{
+	float: right;
+	font-weight: bold;
+	padding-top:7px;
+	
+	
+}
