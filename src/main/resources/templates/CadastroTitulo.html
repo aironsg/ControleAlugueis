@@ -9,7 +9,7 @@
 <section layout:fragment="conteudo">
 
 	<!== formulario da pagina==>
-		<form class="form-horizontal" method="POST" action="/titulos" th:object=${titulo}>
+		<form class="form-horizontal" method="POST" th:action="@{/titulos}" th:object=${titulo}>
 			<div th:replace="MensagemGeral"></div>
 			<div th:replace="MensagemError"></div>
 			
@@ -18,7 +18,7 @@
 				<div class="panel-heading">
 			<div class="clearfix">
 				<h2 class="panel-title ca-titulo-panel">Cadastrar Titulo</h2>
-				<a class="btn btn-link ca-link-panel" href="/titulos">Principal</a>
+				<a class="btn btn-link ca-link-panel" th:href="@{/titulos}">Principal</a>
 			</div>
 		</div>
 
