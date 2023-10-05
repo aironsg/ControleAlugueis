@@ -9,12 +9,10 @@ import org.springframework.stereotype.Service;
 
 import br.com.devairon.ControleAlugueis.model.Titulo;
 import br.com.devairon.ControleAlugueis.repository.TitulosRepository;
-import br.com.devairon.ControleAlugueis.repository.filter.TituloFilter;
+import br.com.devairon.ControleAlugueis.model.TituloFilter;
 
 @Service
 public class CadastroTituloService {
-	
-	
 	@Autowired
 	private TitulosRepository titulos;
 	

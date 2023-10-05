@@ -42,12 +42,9 @@ public class TituloController {
 	
 	@RequestMapping(method = RequestMethod.POST)
 	public String salvar(@Validated Titulo titulo, Errors errors, RedirectAttributes attributes) {
-		//TODO: salvar no banco de dados
-		//verificando se existe algum erro de validação
 		if(errors.hasErrors()) {
 			return CADASTRO_VIEW;
 		}
-		//caso não exista nenhum erro de validação, será salvo na lista e enviando para o banco de dados
 		try {
 			cadastroTituloService.salvar(titulo);
 			attributes.addFlashAttribute("mensagem", "Aluguel cadastrado com sucesso!");
@@ -59,7 +56,7 @@ public class TituloController {
 	}
 	
 	
-// metodo que pesquisa os dados no BD e mostra na tela de pesquisa	
+
 	@RequestMapping
 	public ModelAndView pesquisar() {
 		List<Titulo> todosTitulos = titulos.findAll();
@@ -68,28 +65,7 @@ public class TituloController {
 		
 		return mv;
 	}
-	
 
-/**
- * 
- * @param filtro
- * @return
- * 
- * este metodo está quebrando a aplicação, o uso da anotation ModelAttribute
- * provavelmente seja o defeito.
- * 
- * o objetivo deste metodo é mostrar na tela os dados e permitir a pesquisa de algo especifico
- */
-
-//	@RequestMapping
-//	public ModelAndView pesquisar(@ModelAttribute("filtro") TituloFilter filtro) {
-//		List<Titulo> todosTitulos = cadastroTituloService.filtrar(filtro);
-//		
-//		ModelAndView mv = new ModelAndView("PesquisaTitulos");
-//		mv.addObject("titulos", todosTitulos);
-//		return mv;
-//	}
-	
 	@RequestMapping("{codigo}")
 	public ModelAndView edicao(@PathVariable("codigo") Long codigoTitulo) {
 		Titulo titulo = titulos.getById(codigoTitulo);

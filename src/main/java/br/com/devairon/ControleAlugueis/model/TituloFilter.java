@@ -1,10 +1,8 @@
-package br.com.devairon.ControleAlugueis.repository.filter;
+package br.com.devairon.ControleAlugueis.model;
 
 public class TituloFilter {
 	
 	private String descricao;
-	
-	
 
 	public String getDescricao() {
 		return descricao;
