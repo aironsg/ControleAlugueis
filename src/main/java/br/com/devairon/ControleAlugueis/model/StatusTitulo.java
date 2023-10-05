@@ -1,4 +1,4 @@
-package br.com.estuda.facil.ControleAlugueis.model;
+package br.com.devairon.ControleAlugueis.model;
 
 public enum StatusTitulo {
 

@@ -1,8 +1,12 @@
-package br.com.estuda.facil.ControleAlugueis.controller;
+package br.com.devairon.ControleAlugueis.controller;
 
 import java.util.Arrays;
 import java.util.List;
 
+import br.com.devairon.ControleAlugueis.model.StatusTitulo;
+import br.com.devairon.ControleAlugueis.model.Titulo;
+import br.com.devairon.ControleAlugueis.repository.TitulosRepository;
+import br.com.devairon.ControleAlugueis.service.CadastroTituloService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
@@ -14,11 +18,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
-import br.com.estuda.facil.ControleAlugueis.model.StatusTitulo;
-import br.com.estuda.facil.ControleAlugueis.model.Titulo;
-import br.com.estuda.facil.ControleAlugueis.repository.TitulosRepository;
-import br.com.estuda.facil.ControleAlugueis.service.CadastroTituloService;
 
 @Controller
 @RequestMapping("/titulos")

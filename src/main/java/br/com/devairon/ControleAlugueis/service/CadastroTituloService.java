@@ -1,15 +1,15 @@
-package br.com.estuda.facil.ControleAlugueis.service;
+package br.com.devairon.ControleAlugueis.service;
 
 import java.util.List;
 
+import br.com.devairon.ControleAlugueis.model.StatusTitulo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
-import br.com.estuda.facil.ControleAlugueis.model.StatusTitulo;
-import br.com.estuda.facil.ControleAlugueis.model.Titulo;
-import br.com.estuda.facil.ControleAlugueis.repository.TitulosRepository;
-import br.com.estuda.facil.ControleAlugueis.repository.filter.TituloFilter;
+import br.com.devairon.ControleAlugueis.model.Titulo;
+import br.com.devairon.ControleAlugueis.repository.TitulosRepository;
+import br.com.devairon.ControleAlugueis.repository.filter.TituloFilter;
 
 @Service
 public class CadastroTituloService {

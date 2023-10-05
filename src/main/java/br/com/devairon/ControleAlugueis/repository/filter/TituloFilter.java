@@ -1,4 +1,4 @@
-package br.com.estuda.facil.ControleAlugueis.repository.filter;
+package br.com.devairon.ControleAlugueis.repository.filter;
 
 public class TituloFilter {
 	
