@@ -1,4 +1,4 @@
-package br.com.estuda.facil.ControleAlugueis;
+package br.com.devairon.ControleAlugueis;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;

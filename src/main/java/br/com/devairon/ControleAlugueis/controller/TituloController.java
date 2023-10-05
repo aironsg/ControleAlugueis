@@ -1,8 +1,12 @@
-package br.com.estuda.facil.ControleAlugueis.controller;
+package br.com.devairon.ControleAlugueis.controller;
 
 import java.util.Arrays;
 import java.util.List;
 
+import br.com.devairon.ControleAlugueis.model.StatusTitulo;
+import br.com.devairon.ControleAlugueis.model.Titulo;
+import br.com.devairon.ControleAlugueis.repository.TitulosRepository;
+import br.com.devairon.ControleAlugueis.service.CadastroTituloService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
@@ -14,11 +18,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
-import br.com.estuda.facil.ControleAlugueis.model.StatusTitulo;
-import br.com.estuda.facil.ControleAlugueis.model.Titulo;
-import br.com.estuda.facil.ControleAlugueis.repository.TitulosRepository;
-import br.com.estuda.facil.ControleAlugueis.service.CadastroTituloService;
 
 @Controller
 @RequestMapping("/titulos")
@@ -43,12 +42,9 @@ public class TituloController {
 	
 	@RequestMapping(method = RequestMethod.POST)
 	public String salvar(@Validated Titulo titulo, Errors errors, RedirectAttributes attributes) {
-		//TODO: salvar no banco de dados
-		//verificando se existe algum erro de validação
 		if(errors.hasErrors()) {
 			return CADASTRO_VIEW;
 		}
-		//caso não exista nenhum erro de validação, será salvo na lista e enviando para o banco de dados
 		try {
 			cadastroTituloService.salvar(titulo);
 			attributes.addFlashAttribute("mensagem", "Aluguel cadastrado com sucesso!");
@@ -60,7 +56,7 @@ public class TituloController {
 	}
 	
 	
-// metodo que pesquisa os dados no BD e mostra na tela de pesquisa	
+
 	@RequestMapping
 	public ModelAndView pesquisar() {
 		List<Titulo> todosTitulos = titulos.findAll();
@@ -69,28 +65,7 @@ public class TituloController {
 		
 		return mv;
 	}
-	
 
-/**
- * 
- * @param filtro
- * @return
- * 
- * este metodo está quebrando a aplicação, o uso da anotation ModelAttribute
- * provavelmente seja o defeito.
- * 
- * o objetivo deste metodo é mostrar na tela os dados e permitir a pesquisa de algo especifico
- */
-
-//	@RequestMapping
-//	public ModelAndView pesquisar(@ModelAttribute("filtro") TituloFilter filtro) {
-//		List<Titulo> todosTitulos = cadastroTituloService.filtrar(filtro);
-//		
-//		ModelAndView mv = new ModelAndView("PesquisaTitulos");
-//		mv.addObject("titulos", todosTitulos);
-//		return mv;
-//	}
-	
 	@RequestMapping("{codigo}")
 	public ModelAndView edicao(@PathVariable("codigo") Long codigoTitulo) {
 		Titulo titulo = titulos.getById(codigoTitulo);
